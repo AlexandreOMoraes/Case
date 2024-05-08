@@ -1,0 +1,12 @@
+
+version: 2
+
+models:
+    - name: Vendas_Sanitizada
+      description: "Retirada de ID_Vendas NULL e Duplicados"
+      columns:
+          - name: ID_Vendas
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
