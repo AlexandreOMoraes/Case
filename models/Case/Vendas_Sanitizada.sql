@@ -1,5 +1,5 @@
-with tabela1 as (SELECT * 
-   , current_date() as Data_Atual FROM {{ref('Vendas_Raw')}}
+with tabela1 as (select * 
+   , current_date() as Data_Atual from {{ref('Vendas_Raw')}}
 )
 
 select  ID_Venda,
@@ -10,8 +10,16 @@ select  ID_Venda,
         Data_Venda,
         Metodo_Pagamento,
         Total_Venda,
-        Data_Atual,
-        EXTRACT(YEAR FROM Data_Venda) AS Ano_Venda,
-        EXTRACT(Month FROM Data_Venda) AS Mes_Venda,
-        EXTRACT(Day FROM Data_Venda) AS Dia_Venda
+        extract(YEAR from Data_Venda) as Ano_Venda,
+        extract(Month from Data_Venda) as Mes_Venda,
+        extract(Day from Data_Venda) as Dia_Venda,
+        case extract(DAYOFWEEK from Data_Venda)
+        when 1 then 'Domingo'
+        when 2 then 'Segunda-feira'
+        when 3 then 'Terça-feira'
+        when 4 then 'Quarta-feira'
+        when 5 then 'Quinta-feira'
+        when 6 then 'Sexta-feira'
+        else 'Sábado'
+    end as Dia_Semana_Venda
 from tabela1
