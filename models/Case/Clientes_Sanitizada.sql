@@ -5,10 +5,9 @@ with tabela1 as (
 select  ID_Cliente,
         Nome_Cliente,
         REGEXP_EXTRACT(Nome_Cliente, r'^\S+') AS Primeiro_Nome,
-        REGEXP_REPLACE(Nome_Cliente, r'^\S+\s*', '') AS Sobrenome, 
         Email,
         Telefone,
         Sexo,
         Data_Nascimento,
-        date_diff(Data_Atual,Data_Nascimento, year) as Idade 
+        date_diff(Data_Atual,Data_Nascimento, year) as Idade,        REGEXP_REPLACE(Nome_Cliente, r'^\S+\s*', '') AS Sobrenome
 from tabela1
