@@ -1,5 +1,5 @@
 with tabela1 as (SELECT * 
-   , current_date() as Data_Atual FROM {{ref('Vendas')}}
+   , current_date() as Data_Atual FROM {{ref('Vendas_Raw')}}
 )
 
 select  ID_Venda,
