@@ -10,5 +10,8 @@ select  ID_Venda,
         Data_Venda,
         Metodo_Pagamento,
         Total_Venda,
-        Data_Atual
+        Data_Atual,
+        EXTRACT(YEAR FROM Data_Venda) AS Ano_Venda,
+        EXTRACT(Month FROM Data_Venda) AS Mes_Venda,
+        EXTRACT(Day FROM Data_Venda) AS Dia_Venda
 from tabela1
