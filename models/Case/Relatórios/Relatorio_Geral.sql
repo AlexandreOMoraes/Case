@@ -1,19 +1,18 @@
 SELECT  ID_Venda,Quantidade_Vendida,
         Data_Venda,
-        Metodo_Pagamento,
-        Total_Venda,
-        Data_Atual,
         Ano_Venda,
         Mes_Venda,
         Dia_Venda,
         Dia_Semana_Venda,
+        Metodo_Pagamento,
+        Total_Venda,
         Nome_Produto,
         Descricao_Produto,
         Categoria,
         Marca,
         Sexo,
         Idade,
-        Nome_Loja
+        Nome_Loja,
         Estado,
         Cidade
         from {{ref('Vendas_Sanitizada')}} as vendas
