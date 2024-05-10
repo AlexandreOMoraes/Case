@@ -1,12 +1,11 @@
-with tabela1 as (SELECT * 
-   , current_date() as Data_Atual FROM {{ref('Produtos_Raw')}}
+with tabela1 as (select * 
+   , current_date() as Data_Atual from {{ref('Produtos_Raw')}}
 )
-
 select  ID_Produto,
         Nome_Produto,
         Descricao_Produto,
-        REGEXP_REPLACE(Descricao_Produto, ',.*', '') AS Descricao_Primeiro_Nivel,
-        REGEXP_REPLACE(Descricao_Produto, '.*,', '') AS Descricao_Segundo_Nivel,
+        regexp_replace(Descricao_Produto, ',.*', '') as Descricao_Primeiro_Nivel,
+        regexp_replace(Descricao_Produto, '.*,', '') as Descricao_Segundo_Nivel,
         preco,
         Categoria,
         Marca,

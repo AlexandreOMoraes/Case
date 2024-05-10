@@ -10,5 +10,6 @@ select  ID_Loja,
         Gerente,
         Telefone,
         Data_Abertura,
+        extract(year from Data_Abertura) as ano_Abertura,
         date_diff(Data_Atual,Data_Abertura, month) as Meses_Aberta
 from tabela1
