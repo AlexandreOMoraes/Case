@@ -13,5 +13,9 @@ select  ID_Cliente,
         end Sexo,
         Data_Nascimento,
         extract(year from Data_Nascimento) as Ano_Nascimento,
-        date_diff(Data_Atual,Data_Nascimento, year) as Idade
+        date_diff(Data_Atual,Data_Nascimento, year) as Idade,
+        case
+        when date_diff(Data_Atual,Data_Nascimento, year) between 29 and 34 then '29 a 34'
+        when date_diff(Data_Atual,Data_Nascimento, year) between 35 and 42 then '35 a 42'
+        else 'acima de 42' end as Grupo_Idade
 from tabela1

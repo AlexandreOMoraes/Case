@@ -12,6 +12,7 @@ SELECT  ID_Venda,Quantidade_Vendida,
         Marca,
         Sexo,
         Idade,
+        Grupo_Idade,
         Nome_Loja,
         Estado,
         Cidade
